@@ -1,0 +1,12 @@
+@import '../../value';
+
+.performance {
+    background-color: $color-grey;
+    display: flex;
+    flex: 1;
+    height: 263px;
+    max-width: 258px;
+    min-width: 258px;
+    flex-direction: column;
+    border-radius: 5px;
+}

@@ -1,0 +1,38 @@
+@import '../../value';
+
+.averageSessions {
+    background-color: $color-red;
+    display: flex;
+    flex: 1;
+    height: 263px;
+    max-width: 258px;
+    min-width: 258px;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+
+    &__title {
+        color: #FFF;
+        font-size: 15px;
+        margin: 29px 75px 0 35px;
+    }
+
+    .tooltip {
+        background-color: #FFF;
+        padding: 0 7px 0 7px;
+
+        &__time {
+            line-height: 24px;
+            font-size: 10px;
+        }
+    }
+
+    .day {
+        display: flex;
+        width: auto;
+        margin: 0 0 14px 0;
+        justify-content: space-around;
+        color: #FFF;
+        opacity: 0.5;
+    }
+}

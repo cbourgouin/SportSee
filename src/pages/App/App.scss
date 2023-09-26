@@ -49,6 +49,7 @@
 
     .rowContainer {
         display: flex;
+        flex: 1;
         flex-direction: row;
     }
 
@@ -58,7 +59,7 @@
 
         #sideMenu {
             display: flex;
-            width: 117px;
+            min-width: 117px;
             flex-direction: column;
             background-color: $color-black;
             justify-content: center;
@@ -90,11 +91,13 @@
 
         #pageBody {
             display: flex;
+            flex: 1;
             flex-direction: column;
-            margin: 65px 0 0 100px;
+            margin: 65px 90px 0 100px;
 
             #title {
                 font-size: 48px;
+                width: fit-content;
                 
                 #nom {
                     color: $color-red;
@@ -105,6 +108,17 @@
                 margin: 35px 0 0 0;
                 font-size: 18px;
                 font-weight: 400;
+                width: fit-content;
+            }
+
+            #graphContainer {
+                margin: 77px 0 0 0;
+                max-width: 835px;
+                width: 100%;
+                display: flex;
+                flex: 1;
+                flex-wrap: wrap;
+                gap: 30px;
             }
         }
     }

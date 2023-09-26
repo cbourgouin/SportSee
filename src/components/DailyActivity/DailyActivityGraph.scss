@@ -1,0 +1,47 @@
+@import '../../value';
+
+.dailyActivity {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 320px;
+    min-width: 835px;
+    padding: 25px 25px 0 32px;
+    background-color: #FBFBFB;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+
+    &__titleAndLegend {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        margin: 0 0 60px 0;
+
+        &__legend {
+            display: flex;
+
+            &__item {
+            
+                &:nth-child(2) {
+                    margin: 0 32px 0 0;
+                }
+            }
+
+            &__dot {
+                margin: 0 12px 0 0;
+            }
+        }
+    }
+
+    .tooltip {
+        background-color: $color-red;
+        padding: 4px 7px 4px 7px;
+        text-align: center;
+
+        * {
+            color: $color-white;
+            font-size: 9px;
+            line-height: 24px;
+        }
+    }
+}
