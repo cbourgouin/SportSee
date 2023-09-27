@@ -28,7 +28,7 @@ function DailyActivityGraph() {
           <div className="dailyActivity__titleAndLegend__legend__item">Calories brûlées (kCal)</div>
         </div>
       </div>
-      <ResponsiveContainer>
+      <ResponsiveContainer width="100%">
         <BarChart
           data={activity}
           barGap={8}

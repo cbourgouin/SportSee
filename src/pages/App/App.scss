@@ -93,12 +93,12 @@
             display: flex;
             flex: 1;
             flex-direction: column;
-            margin: 65px 90px 0 100px;
+            margin: 65px 90px 90px 100px;
 
             #title {
                 font-size: 48px;
                 width: fit-content;
-                
+
                 #nom {
                     color: $color-red;
                 }
@@ -111,14 +111,29 @@
                 width: fit-content;
             }
 
-            #graphContainer {
-                margin: 77px 0 0 0;
-                max-width: 835px;
-                width: 100%;
-                display: flex;
-                flex: 1;
-                flex-wrap: wrap;
+            .rowContainer {
                 gap: 30px;
+                margin: 77px 0 0 0;
+
+                #graphContainer {
+                    width: 100%;
+                    display: flex;
+                    flex: 4;
+                    flex-wrap: wrap;
+
+                    .rowContainer {
+                        margin: 30px 0 0 0;
+                        gap: 30px;
+                        justify-content: space-between;
+                    }
+                }
+
+                #dataCardContainer {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                    justify-content: space-between;
+                }
             }
         }
     }

@@ -5,11 +5,17 @@ import rest from "../../assets/rest.svg"
 import swimming from "../../assets/swimming.svg"
 import cycling from "../../assets/cycling.svg"
 import bodybuilding from "../../assets/bodybuilding.svg"
+import caloriesIcon from "../../assets/caloriesIcon.svg";
+import proteinIcon from "../../assets/proteinIcon.svg";
+import carbsIcon from "../../assets/carbsIcon.svg";
+import fatIcon from "../../assets/fatIcon.svg";
 
 import { useState, useEffect } from "react";
 import DailyActivityGraph from "../../components/DailyActivity/DailyActivityGraph";
 import SessionTimeGraph from "../../components/SessionTime/SessionTimeGraph";
 import PerformanceRadarChart from "../../components/PerformanceRadarChart/PerformanceRadarChart";
+import ScoreRadialBarChart from "../../components/ScoreRadialBarChart/ScoreRadialBarChart.jsx";
+import DataDisplayCard from "../../components/DataDisplayCard/DataDisplayCard.jsx"
 import { getUserInformation } from "../../services/request";
 import Users from "../../models/Users";
 
@@ -18,7 +24,7 @@ function App() {
 
   useEffect(() => {
     getUserInformation(process.env.REACT_APP_USER_ID).then((response) => {
-        setData(response);
+      setData(response);
     });
   });
 
@@ -55,8 +61,33 @@ function App() {
           <div className="rowContainer">
             <div id="graphContainer">
               <DailyActivityGraph />
-              <SessionTimeGraph />
-              <PerformanceRadarChart />
+              <div className="rowContainer">
+                <SessionTimeGraph />
+                <PerformanceRadarChart />
+                <ScoreRadialBarChart user={data} />
+              </div>
+            </div>
+            <div id="dataCardContainer">
+              <DataDisplayCard
+                value={(data.caloriesCount / 1000).toString() + "kCal"}
+                subText="Calories"
+                icon={caloriesIcon}
+              />
+              <DataDisplayCard
+                value={data.proteinCount.toString() + "g"}
+                subText="Proteines"
+                icon={proteinIcon}
+              />
+              <DataDisplayCard
+                value={data.carbohydrateCount.toString() + "g"}
+                subText="Glucides"
+                icon={carbsIcon}
+              />
+              <DataDisplayCard
+                value={data.lipidCount.toString() + "g"}
+                subText="Lipides"
+                icon={fatIcon}
+              />
             </div>
           </div>
         </div>
