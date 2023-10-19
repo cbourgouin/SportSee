@@ -7,7 +7,7 @@
 
     header {
         display: flex;
-        height: 91px;
+        min-height: 91px;
         background-color: $color-black;
 
         #marque {
@@ -17,7 +17,6 @@
             margin: 0 0 0 30px;
             justify-content: center;
             align-items: center;
-            height: 100%;
 
             #logo {
                 height: 57px;
@@ -83,58 +82,26 @@
                 font-size: 12px;
                 width: 138px;
                 position: absolute;
-                bottom: 122px;
+                bottom: 0;
                 left: -10px;
                 transform: rotate(-90deg);
             }
         }
+    }
+}
 
-        #pageBody {
-            display: flex;
-            flex: 1;
-            flex-direction: column;
-            margin: 65px 90px 90px 100px;
-
-            #title {
-                font-size: 48px;
-                width: fit-content;
-
-                #nom {
-                    color: $color-red;
-                }
-            }
-
-            #subTitle {
-                margin: 35px 0 0 0;
-                font-size: 18px;
-                font-weight: 400;
-                width: fit-content;
-            }
-
-            .rowContainer {
-                gap: 30px;
-                margin: 77px 0 0 0;
-
-                #graphContainer {
-                    width: 100%;
-                    display: flex;
-                    flex: 4;
-                    flex-wrap: wrap;
-
-                    .rowContainer {
-                        margin: 30px 0 0 0;
-                        gap: 30px;
-                        justify-content: space-between;
-                    }
-                }
-
-                #dataCardContainer {
-                    display: flex;
-                    flex-direction: column;
-                    flex: 1;
-                    justify-content: space-between;
+@media screen and (max-width: 1220px) {
+    #app {
+    
+        #contSidBod {
+    
+            #sideMenu {
+    
+                small {
+                    bottom: -170px;
                 }
             }
         }
     }
 }
+

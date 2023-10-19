@@ -8,11 +8,11 @@ import "./DailyActivityGraph.scss";
 import greyDot from "../../assets/greyDot.svg";
 import redDot from "../../assets/redDot.svg";
 
-function DailyActivityGraph() {
+function DailyActivityGraph({ id }) {
   const [activity, setActivity] = useState([])
 
   useEffect(() => {
-    getUserDailyActivity(process.env.REACT_APP_USER_ID).then((response) => {
+    getUserDailyActivity(id).then((response) => {
       setActivity(response);
     });
   });
@@ -28,7 +28,7 @@ function DailyActivityGraph() {
           <div className="dailyActivity__titleAndLegend__legend__item">Calories brûlées (kCal)</div>
         </div>
       </div>
-      <ResponsiveContainer width="100%">
+      <ResponsiveContainer width="99%">
         <BarChart
           data={activity}
           barGap={8}
@@ -59,11 +59,13 @@ function DailyActivityGraph() {
             axisLine={false}
             tickLine={false}
             tickMargin={35}
+            stroke="#9B9EAC"
           />
           <YAxis
             yAxisId="YAxis_cal"
             domain={[0, "dataMax + 10"]}
-            dataKey="calories" hide
+            dataKey="calories" 
+            hide
           />
           <Tooltip
             content={<CustomToolTip />}

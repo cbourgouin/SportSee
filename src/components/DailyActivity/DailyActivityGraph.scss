@@ -3,9 +3,7 @@
 .dailyActivity {
     display: flex;
     flex-direction: column;
-    flex: 1;
     height: 320px;
-    width: 600px;
     padding: 25px 25px 0 32px;
     background-color: #FBFBFB;
     border-radius: 5px;
@@ -21,7 +19,7 @@
             display: flex;
 
             &__item {
-            
+
                 &:nth-child(2) {
                     margin: 0 32px 0 0;
                 }

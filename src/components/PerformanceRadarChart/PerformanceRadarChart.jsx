@@ -5,11 +5,11 @@ import Performance from "../../models/Performance";
 
 import "./PerformanceRadarChart.scss";
 
-function PerformanceRadarChart() {
+function PerformanceRadarChart({ id }) {
     const [performance, setPerformance] = useState([])
 
     useEffect(() => {
-        getUserPerformance(process.env.REACT_APP_USER_ID).then((response) => {
+        getUserPerformance(id).then((response) => {
             setPerformance(response);
         });
     });

@@ -6,19 +6,31 @@
     flex: 1;
     height: 263px;
     max-width: 258px;
-    min-width: 258px;
+    min-width: 160px;
     flex-direction: column;
     border-radius: 5px;
     overflow: hidden;
+    position: relative;
+
+    #mouseEffect {
+        position: absolute;
+        width: 500px;
+        height: 263px;
+        z-index: 2;
+        background-color: #000;
+        opacity: 0.0975;
+        pointer-events: none;
+        transition: left 0.5 ease-out;
+    }
 
     &__title {
-        color: #FFF;
+        color: $color-white;
         font-size: 15px;
         margin: 29px 75px 0 35px;
     }
 
     .tooltip {
-        background-color: #FFF;
+        background-color: $color-white;
         padding: 0 7px 0 7px;
 
         &__time {
@@ -32,7 +44,7 @@
         width: auto;
         margin: 0 0 14px 0;
         justify-content: space-around;
-        color: #FFF;
+        color: $color-white;
         opacity: 0.5;
     }
 }

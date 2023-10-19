@@ -1,9 +1,9 @@
 class AverageSessions {
     sessionLength = null;
-    day = null;
+    day = "";
 
     constructor(_sesLen, _day) {
-        if (typeof _sesLen === "number" && typeof _day === "number") {
+        if (typeof _sesLen === "number" && typeof _day === "string") {
             this.sessionLength = _sesLen;
             this.day = _day;
         } else {

@@ -1,0 +1,65 @@
+@import '../../value';
+
+#pageBody {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 65px 90px 90px 100px;
+
+    #title {
+        font-size: 48px;
+        width: fit-content;
+
+        #nom {
+            color: $color-red;
+        }
+    }
+
+    #subTitle {
+        margin: 35px 0 0 0;
+        font-size: 18px;
+        font-weight: 400;
+        width: fit-content;
+    }
+
+    .rowContainer {
+        gap: 30px;
+        margin: 77px 0 0 0;
+
+        #graphContainer {
+            width: 100%;
+            display: flex;
+            flex: 4;
+            flex-direction: column;
+
+            .rowContainer {
+                margin: 30px 0 0 0;
+                gap: 30px;
+                justify-content: space-between;
+            }
+        }
+
+        #dataCardContainer {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content: space-between;
+        }
+    }
+}
+
+@media screen and (max-width: 1220px) {
+
+    #pageBody {
+
+        #globalInfoContainers {
+            flex-direction: column;
+
+            #dataCardContainer {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 30px 30px;
+            }
+        }
+    }
+}

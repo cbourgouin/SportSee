@@ -17,7 +17,7 @@ export function getUserInformation(_userId) {
                         response.data.userInfos.firstName,
                         response.data.userInfos.lastName,
                         response.data.userInfos.age,
-                        response.data.todayScore,
+                        response.data.todayScore ? response.data.todayScore : response.data.score,
                         response.data.keyData.calorieCount,
                         response.data.keyData.proteinCount,
                         response.data.keyData.carbohydrateCount,
@@ -39,7 +39,7 @@ export function getUserInformation(_userId) {
                         response.data.userInfos.firstName,
                         response.data.userInfos.lastName,
                         response.data.userInfos.age,
-                        response.data.todayScore,
+                        response.data.todayScore ? response.data.todayScore : response.data.score,
                         response.data.keyData.calorieCount,
                         response.data.keyData.proteinCount,
                         response.data.keyData.carbohydrateCount,
@@ -50,7 +50,6 @@ export function getUserInformation(_userId) {
                     console.error(`Impossible de récupérer les produits : ${error}`);
                 });
             break;
-
     }
 }
 
@@ -94,7 +93,6 @@ export function getUserDailyActivity(_userId) {
                     console.error(`Impossible de récupérer les produits : ${error}`);
                 });
             break;
-
     }
 }
 
@@ -107,12 +105,14 @@ export function getUserAverageSessions(_userId) {
                 }, 1000);
             })
                 .then((response) => {
+                    const dayLetter = ["L", "M", "M", "J", "V", "S", "D"];
                     let arrayData = [];
                     response.data.sessions.forEach(session => {
                         arrayData.push(
-                            new AverageSessions(session.sessionLength, session.day)
+                            new AverageSessions(session.sessionLength, dayLetter[session.day-1])
                         )
                     });
+                    console.log(arrayData)
                     return arrayData;
                 })
                 .catch((error) => {
@@ -126,10 +126,11 @@ export function getUserAverageSessions(_userId) {
                     return response.json();
                 })
                 .then((response) => {
+                    const dayLetter = ["L", "M", "M", "J", "V", "S", "D"];
                     let arrayData = [];
                     response.data.sessions.forEach(session => {
                         arrayData.push(
-                            new AverageSessions(session.sessionLength, session.day)
+                            new AverageSessions(session.sessionLength, dayLetter[session.day-1])
                         )
                     });
                     return arrayData;
@@ -138,7 +139,6 @@ export function getUserAverageSessions(_userId) {
                     console.error(`Impossible de récupérer les produits : ${error}`);
                 });
             break;
-
     }
 }
 
@@ -159,10 +159,11 @@ export function getUserPerformance(_userId) {
                     return response;
                 })
                 .then((response) => {
+                    const kinfFr = ["Cardio", "Energie", "Endurance", "Force", "Vitesse", "Intensité"];
                     let arrayData = [];
                     response.data.data.forEach(dat => {
                         arrayData.push(
-                            new Performance(response.data.kind[dat.kind.toString()], dat.value)
+                            new Performance(kinfFr[dat.kind - 1], dat.value)
                         )
                     });
                     return arrayData;
@@ -173,7 +174,7 @@ export function getUserPerformance(_userId) {
             break;
 
         case ("prod"):
-            return fetch('http://localhost:3000/user/' + _userId + '/average-sessions')
+            return fetch('http://localhost:3000/user/' + _userId + '/performance')
                 .then((response) => {
                     return response.json();
                 })
@@ -186,10 +187,11 @@ export function getUserPerformance(_userId) {
                     return response;
                 })
                 .then((response) => {
+                    const kinfFr = ["Cardio", "Energie", "Endurance", "Force", "Vitesse", "Intensité"];
                     let arrayData = [];
                     response.data.data.forEach(dat => {
                         arrayData.push(
-                            new Performance(response.data.kind[dat.kind.toString()], dat.value)
+                            new Performance(kinfFr[dat.kind - 1], dat.value)
                         )
                     });
                     return arrayData;
@@ -198,6 +200,5 @@ export function getUserPerformance(_userId) {
                     console.error(`Impossible de récupérer les produits : ${error}`);
                 });
             break;
-
     }
 }

@@ -39,7 +39,7 @@ function ScoreRadialBarChart({ user }) {
                     <text textAnchor="middle" fontSize={15} fontWeight={600}>
                         <tspan x="50%" y="50%" fontSize={22}>{data[0].value}%</tspan>
                         <tspan x="50%" y="61%" fill={'#74798c'}>de votre </tspan>
-                        <tspan x="50%" y="71%" fill={'#74798c'}>objectif</tspan>
+                        <tspan x="50%" y="69%" fill={'#74798c'}>objectif</tspan>
                     </text>
                 </RadialBarChart>
             </ResponsiveContainer>

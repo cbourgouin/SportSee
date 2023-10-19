@@ -1,5 +1,5 @@
 .card {
-    width: 258px;
+    max-width: 258px;
     padding: 32px;
     display: flex;
     border-radius: 5px;
@@ -29,5 +29,13 @@
             font-size: 14px;
             line-height: 24px;
         }
+    }
+}
+
+@media screen and (max-width: 1220px) {
+
+    .card {
+        max-width: 213px;
+        flex: 1;
     }
 }
