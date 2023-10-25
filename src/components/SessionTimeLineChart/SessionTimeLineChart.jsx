@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import { LineChart, CartesianGrid, YAxis, Legend, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
+import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { getUserAverageSessions } from "../../services/request";
-import AverageSessions from "../../models/AverageSessions";
 
 import "./SessionTimeLineChart.scss";
 
@@ -15,7 +14,7 @@ function SessionTimeLineChart({ id }) {
 
       setData(response);
     });
-  });
+  }, [id]);
 
   return <section className="averageSessions" onMouseOver={onmousehover} onMouseLeave={onmouseleave}>
     <div id="mouseEffect" style={{ top: Y, left: X }}></div>

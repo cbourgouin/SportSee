@@ -6,7 +6,6 @@ import swimming from "../../assets/swimming.svg"
 import cycling from "../../assets/cycling.svg"
 import bodybuilding from "../../assets/bodybuilding.svg"
 
-import { Routes, Route } from 'react-router-dom';
 import Analitics from "../Analitics/Analitics";
 
 function App() {
@@ -15,13 +14,13 @@ function App() {
       <header>
         <div id="marque">
           <img src={logo} id="logo" alt="logo" />
-          <a id="nomMarque">SportSee</a>
+          <span id="nomMarque">SportSee</span>
         </div>
         <nav id="navGeneral">
-          <div><a>Accueil</a></div>
-          <div><a>Profil</a></div>
-          <div><a>Réglages</a></div>
-          <div><a>Communauté</a></div>
+          <div><span>Accueil</span></div>
+          <div><span>Profil</span></div>
+          <div><span>Réglages</span></div>
+          <div><span>Communauté</span></div>
         </nav>
       </header>
       <div className="rowContainer" id="contSidBod">

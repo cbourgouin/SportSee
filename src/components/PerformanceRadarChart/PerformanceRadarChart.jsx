@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from "recharts";
 import { getUserPerformance } from "../../services/request";
-import Performance from "../../models/Performance";
 
 import "./PerformanceRadarChart.scss";
 
@@ -12,7 +11,7 @@ function PerformanceRadarChart({ id }) {
         getUserPerformance(id).then((response) => {
             setPerformance(response);
         });
-    });
+    }, [id]);
 
     return (
         <section className="performance">

@@ -1,14 +1,15 @@
 @import '../../value';
 
 #app {
-    height: 100%;
     display: flex;
+    flex: 1;
     flex-direction: column;
 
     header {
         display: flex;
         min-height: 91px;
         background-color: $color-black;
+        align-items: center;
 
         #marque {
             display: flex;
@@ -92,11 +93,11 @@
 
 @media screen and (max-width: 1220px) {
     #app {
-    
+
         #contSidBod {
-    
+
             #sideMenu {
-    
+
                 small {
                     bottom: -300px;
                 }
@@ -104,4 +105,3 @@
         }
     }
 }
-

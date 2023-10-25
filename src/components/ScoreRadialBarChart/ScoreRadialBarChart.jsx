@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { ResponsiveContainer, RadialBarChart, RadialBar, Legend, Tooltip } from "recharts";
+import { ResponsiveContainer, RadialBarChart, RadialBar} from "recharts";
 
 import "./ScoreRadialBarChart.scss";
 

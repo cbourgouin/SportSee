@@ -24,15 +24,15 @@ function Analitics() {
         getUserInformation(id).then((response) => {
             setData(response);
         });
-    });
+    }, [id]);
 
     
     return <div id="pageBody">
     <div id="title">
-      <a>Bonjour </a>
-      <a id="nom">{data.firstName}</a>
+      <span>Bonjour </span>
+      <span id="nom">{data.firstName}</span>
     </div>
-    <a id="subTitle">Félicitation ! Vous avez explosé vos objectifs hier 👏</a>
+    <span id="subTitle">Félicitation ! Vous avez explosé vos objectifs hier 👏</span>
     <div className="rowContainer" id="globalInfoContainers">
       <div id="graphContainer">
         <DailyActivityGraph id={ id } />

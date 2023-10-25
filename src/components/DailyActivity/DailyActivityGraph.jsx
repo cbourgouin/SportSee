@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar } from "recharts";
 import { getUserDailyActivity } from "../../services/request";
-import DailyActivity from "../../models/DailyActivity";
 
 import "./DailyActivityGraph.scss";
 
@@ -15,7 +14,7 @@ function DailyActivityGraph({ id }) {
     getUserDailyActivity(id).then((response) => {
       setActivity(response);
     });
-  });
+  }, [id]);
 
   return (
     <section className="dailyActivity">
@@ -96,8 +95,8 @@ const CustomToolTip = ({ active, payload }) => {
   if (active) {
     return (
       <div className="tooltip">
-        <p className="tooltip__calories">{payload[0].value}kg</p>
-        <p className="tooltip__kg">{payload[1].value}Kcal</p>
+        <span className="tooltip__calories">{payload[0].value}kg</span>
+        <span className="tooltip__kg">{payload[1].value}Kcal</span>
       </div>
     )
   }
